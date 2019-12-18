@@ -1,0 +1,7 @@
+Instalar moveit
+$ sudo apt-get install ros-kinetic-moveit
+
+Clonar no catkin_ws:
+git clone git@github.com:ros-industrial/universal_robot.git
+
+Catkin_make

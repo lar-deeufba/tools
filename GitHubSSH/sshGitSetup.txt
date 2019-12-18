@@ -1,0 +1,29 @@
+Criando keys pra SSH:
+
+
+1. Criando as keys:
+	$ ssh-keygen -t rsa -b 4096 -C "seuemail@gmail.com"
+	(pressiona enter pra ele salvar no diretorio ~/.ssh)
+	(coloca uma senha)
+
+2. Adicionar a key criada (a nao publica) a nosso computador
+	$ ssh-add ~/.ssh/id_rsa
+	(coloca a senha)
+
+3. copiar a public key pro clipboard e colar no github
+	$ gedit ~/.ssh/id_rsa.pub
+	(copia a key inteira)
+	(vai no github: SSH AND GPG KEYS -> new SSH key -> cola a key copiada)
+
+	--- outro jeito mais eficiente de copiar a public key ---
+	$ sudo apt-get install xclip
+	$ xclip -sel clip < ~/.ssh/id_rsa.pub
+	(ao usar esse comando o pub key ja deve estar no clipboard)
+
+4. Adicionando um diretorio remoto para SSH (se estivermos ja usando o HTTPS
+como conexao com o nosso PC)
+	eh so ir no github/lab ir em clone com SSH e copiar olink e colocar aqui
+	$ git remote set-url origin git@github.com:hpoleselo/NOMEDOREPO.git
+	No caso do gitlab a mesma coisa
+
+5. Depois eh so dar um push como tradicional e ele vai perguntar algo e tu clica 'yes'
