@@ -1,7 +1,44 @@
-Instalar moveit
+
+## UR5 installation
+Install some dependencies that were not covered from rosdep:
 $ sudo apt-get install ros-kinetic-moveit
+$ sudo apt-get install ros-kinetic-industrial-msgs
 
-Clonar no catkin_ws:
-git clone git@github.com:ros-industrial/universal_robot.git
 
-Catkin_make
+Clone in your catkin workspace:
+We're not getting the newest version from: because ...
+$ git clone -b kinetic-devel https://github.com/ros-industrial/universal_robot.git
+
+ROSDEP
+https://github.com/ros-industrial/universal_robot/issues/183
+
+
+Since we're not getting the newest version, in order to bring the robot up we have to install
+the following package:
+$ git clone -b kinetic-devel git@github.com:ros-industrial/ur_modern_driver.git
+
+Go to the root of your catkin workspace and:
+$ catkin_make
+
+
+
+UR5 is usually tethered with an ethernet cable, meaning it has an IP
+
+to bring the robot up:
+$ roslaunch ur_modern_driver ur5_bringup.launch robot_ip:=192.168.131.12
+
+
+
+## Using the Robotiq 2 gripper
+
+Permission to open the gripper's port
+$ sudo chmod 777 /dev/ttyUSB0
+
+Interfacing the gripper with ROS:
+$ rosrun robotiq_2f_gripper_control Robotiq2FGripperRtuNode.py /dev/ttyUSB0
+
+To make the usage easier we create an alias that concatenates both commands:
+
+``` $ cd ~/ ´´´
+``` $ echo "open-gripper() { sudo chmod 777 /dev/ttyUSB0 ; rosrun robotiq_2f_gripper_control Robotiq2FGripperRtuNode.py /dev/ttyUSB0 ; }" >> .bashrc ```
+
