@@ -102,7 +102,6 @@ You should see the last value from the list varying, which matches the wrist3 jo
 ``` [-1.6007002035724085, -1.7271001974688929, -2.2029998938189905, -0.8079999128924769, 1.5951000452041626, 0.10260496288537979] ```
 
 
-
 ## Using the Robotiq 2 Gripper
 
 Permission to open the gripper's port
@@ -130,4 +129,8 @@ If the gripper doesn't open or close:
 Why should we downgrade to use ```ur_modern_driver``` you can find [here](https://github.com/ros-industrial/universal_robot/issues/183).
 
 When using older versions from URSim (<= 3.4.0) usually the installation shell script uses jdk 6, which is no more found on the repositories, [this](https://github.com/arunavanag591/ursim) repository has a tutorial how to manually do it correctly.
+
+Helpful links:
+https://answers.ros.org/question/276468/how-to-connect-to-ur-sim-from-ros/
+https://answers.ros.org/question/243601/cant-establish-connection-to-ur5-using-ros-industrial-driver/
 
