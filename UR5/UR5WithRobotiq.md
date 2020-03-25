@@ -61,13 +61,17 @@ Download the URSim from [here](https://www.universal-robots.com/download/?option
 Follow these instructions to install it (taken from the download page itself): e.g: version 3.9.0.64176
 
 ``` $ cd ~ ```
+
 ``` $ tar xvzf URSim_Linux-3.9.0.64176.tar.gz ```
+
 ``` $ cd ursim-3.9.0.64176 ```
+
 ``` $ ./install.sh ```
 
 To run it manually:
 
 ``` $ cd .. ```
+
 ``` $ ursim-3.9.0.64176/start-ursim.sh ```
 
 You should get this starting screen:
